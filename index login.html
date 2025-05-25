@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Halaman Login</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: url('images/B.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #00ffcc;
+}
+
+/* LOGIN BOX */
+.pertama {
+  margin-top: 140px;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 450px;
+  border-radius: 20px;
+  color: rgb(8, 29, 36);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  animation: fadeSlide 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  background: transparent;
+  color: rgb(2, 12, 7);
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.pertama h1 {
+  font-size: 50px;
+  text-align: center;
+  word-spacing: 100px;
+}
+
+.pertama .input {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+  height: 55px;
+  background: rgb(57, 255, 163);
+  border-radius: 20px;
+}
+
+.pertama input {
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 20px 40px 20px 20px;
+}
+
+.pertama input::placeholder {
+  color: black;
+  font-size: 16px;
+}
+
+.input i {
+  position: absolute;
+  right: 20px;
+  height: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  top: 60%;
+}
+
+.pertama .lupa {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.pertama a {
+  color: rgb(4, 17, 11);
+}
+
+.pertama .tombol {
+  background: rgb(57, 255, 163);
+  border: none;
+  border-radius: 200px;
+  width: 100%;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.tidak-punya-akun {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.warning {
+  text-align: center;
+  background: #160b0b;
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 8px;
+  text-transform: capitalize;
+}
+
+.warning1 {
+  text-align: center;
+  background: #1b0808;
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 8px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- HEADER NAVIGATION -->
+  <header>
+    <div class="navbar">
+      <h2 class="logo">Kelompok 2</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FORM CONTAINER -->
+  <div class="pertama">
+    <!-- FORM LOGIN -->
+    <div class="subpertama" id="a">
+      <form id="formLogin">
+        <h1>MASUK</h1>
+        <div class="input">
+          <input type="text" name="Nama" placeholder="Nama" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input">
+          <input type="password" name="kata sandi" placeholder="Kata Sandi" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="lupa">
+          <label><input type="checkbox"> Ingat kata sandinya?</label>
+          <a href="#">Jangan lupa</a>
+        </div>
+        <div>
+          <input type="submit" value="Login" class="tombol">
+        </div>
+        <div class="tidak-punya-akun">
+          <p>Tidak punya akun? <button id="login">Buat akun</button></p>
+        </div>
+      </form>
+    </div>
+
+    <!-- FORM DAFTAR -->
+    <div class="subkedua" id="b" style="display: none;">
+      <form id="formDaftar">
+        <h1>Daftar</h1>
+        <div class="input">
+          <input type="text" name="name" placeholder="Name" required>
+          <i class='bx bx-rename'></i>
+        </div>
+        <div class="input">
+          <input type="text" name="username" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input">
+          <input type="password" name="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="lupa">
+          <label><input type="checkbox"> Lu lupa?</label>
+          <a href="#">Jangan lupa</a>
+        </div>
+        <div>
+          <input type="submit" value="Daftar" class="tombol">
+        </div>
+        <div class="tidak-punya-akun">
+          <p>Lah punya akun? <button id="daftar">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const formLogin = document.getElementById('a');
+    const formDaftar = document.getElementById('b');
+    const tombolBuatAkun = document.getElementById('login');
+    const tombolLogin = document.getElementById('daftar');
+
+    tombolBuatAkun.addEventListener('click', function (e) {
+      e.preventDefault();
+      formLogin.style.display = 'none';
+      formDaftar.style.display = 'block';
+    });
+
+    tombolLogin.addEventListener('click', function (e) {
+      e.preventDefault();
+      formDaftar.style.display = 'none';
+      formLogin.style.display = 'block';
+    });
+
+    // Simulasi login sukses
+    document.getElementById('formLogin').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Login berhasil! Mengarahkan ke halaman utama...');
+      window.location.href = 'index.html';
+    });
+
+    // Simulasi daftar sukses
+    document.getElementById('formDaftar').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Akun berhasil dibuat! Silakan login.');
+      formDaftar.style.display = 'none';
+      formLogin.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
